@@ -1,0 +1,21 @@
+{
+  "name": "catchify",
+  "description": "Describe Me",
+  "author": "Marc Seifert",
+  "version": "0.1.0",
+  "scripts": {
+    "start": "brunch watch",
+    "build": "brunch build --production"
+  },
+  "dependencies": {
+    "coffee-script-brunch": "^2.1.0",
+    "coffeelint-brunch": "^2.0.0"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.0.0",
+    "brunch": "^2.5.1",
+    "css-brunch": "^2.0.0",
+    "javascript-brunch": "^2.0.0",
+    "sass-lint-brunch": "^1.1.0"
+  }
+}
