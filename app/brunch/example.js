@@ -1,1 +1,1 @@
-alert('Brunch works again!')
+console.log('Brunch works again!');

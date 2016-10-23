@@ -45,9 +45,18 @@ gem 'npm-pipeline-rails'
 # Haml is a templating engine for HTML
 gem 'haml', '~> 4.0.5'
 
+# Allows users to login through facebook
+gem 'omniauth-facebook'
+
+# Provides complete geocoding queries
+gem 'geocoder', '~> 1.3', '>= 1.3.7'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Prints commands in console with colors
+  gem 'awesome_print'
 end
 
 group :development do

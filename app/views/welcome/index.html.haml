@@ -1,1 +1,27 @@
-Hello
+:css
+  #map {
+    height: 400px;
+    width: 100%;
+  }
+
+- if current_user.present?
+  :javascript
+    var latitude = parseFloat("#{current_user.location.latitude}");
+    var longitude = parseFloat("#{current_user.location.longitude}");
+
+    function initMap() {
+      var uluru = {lat: latitude, lng: longitude};
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 12,
+        center: uluru
+      });
+      var marker = new google.maps.Marker({
+        position: uluru,
+        map: map
+      });
+    }
+
+%h3 Welcome Page
+#map
+- if current_user.present?
+  %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDkiRGNBibAYZH7wTLzTv_AegYgZrtTfhU&callback=initMap"}
