@@ -12,7 +12,7 @@
     function initMap() {
       var uluru = {lat: latitude, lng: longitude};
       var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 12,
+        zoom: 10,
         center: uluru
       });
       var marker = new google.maps.Marker({
@@ -21,7 +21,36 @@
       });
     }
 
-%h3 Welcome Page
-#map
 - if current_user.present?
+  %h3 You Are Here:
+  #map
   %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyDkiRGNBibAYZH7wTLzTv_AegYgZrtTfhU&callback=initMap"}
+
+  %h3 Registered Users:
+  %table{ border: '1' }
+    %thead
+      %th Profile Image
+      %th Name
+      %th Email
+      %th Provider Type
+      %th Provider Id
+      %th Country
+      %th City
+      %th Latitude
+      %th Longitude
+      %th Last Seen
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= image_tag(user.image)
+          %td= user.name
+          %td= user.email
+          %td= user.provider
+          %td= user.uid
+          %td= user.location.try(:country)
+          %td= user.location.try(:city)
+          %td= user.location.try(:latitude)
+          %td= user.location.try(:longitude)
+          %td= user.location.try(:updated_at)
+- else
+  %h3 Welcome To Catchify
