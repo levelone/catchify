@@ -12,7 +12,7 @@ window.fbAsyncInit = ->
   $('#sign_in').click (e) =>
     e.preventDefault()
     FB.login (response) =>
-      window.location = "/auth/facebook/callback?latitude=#{@latitude}&longitude=#{@longitude}" if response.authResponse
+      window.location = "/auth/facebook/callback?latitude=#{window.latitude}&longitude=#{window.longitude}" if response.authResponse
 
   $('#sign_out').click (e) ->
     FB.getLoginStatus (response) ->

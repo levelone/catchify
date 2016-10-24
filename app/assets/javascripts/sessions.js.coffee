@@ -5,11 +5,11 @@ $(document).ready ->
     maximumAge: 0
 
   success = (pos) ->
-    @latitude = pos.coords.latitude
-    @longitude = pos.coords.longitude
+    window.latitude = pos.coords.latitude
+    window.longitude = pos.coords.longitude
     console.log 'Your current position is:'
-    console.log 'Latitude : ' + @latitude
-    console.log 'Longitude: ' + @longitude
+    console.log 'Latitude : ' + window.latitude
+    console.log 'Longitude: ' + window.longitude
     return
 
   error = (err) ->
